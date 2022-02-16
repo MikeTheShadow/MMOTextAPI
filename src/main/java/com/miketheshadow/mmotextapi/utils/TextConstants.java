@@ -49,34 +49,90 @@ public class TextConstants {
 
         public static String fromInt(int id) {
             switch (id) {
-                case 1 -> {return POSITIVE_SPACE_1; }
-                case 2 -> {return POSITIVE_SPACE_2; }
-                case 3 -> {return POSITIVE_SPACE_3; }
-                case 4 -> {return POSITIVE_SPACE_4; }
-                case 5 -> {return POSITIVE_SPACE_5; }
-                case 6 -> {return POSITIVE_SPACE_6; }
-                case 7 -> {return POSITIVE_SPACE_7; }
-                case 8 -> {return POSITIVE_SPACE_8; }
-                case 16 -> {return POSITIVE_SPACE_16; }
-                case 32 -> {return POSITIVE_SPACE_32; }
-                case 64 -> {return POSITIVE_SPACE_64; }
-                case 128 -> {return POSITIVE_SPACE_128; }
-                case 512 -> {return POSITIVE_SPACE_512; }
-                case 1024 -> {return POSITIVE_SPACE_1024; }
-                case -1 -> {return NEGATIVE_SPACE_1; }
-                case -2 -> {return NEGATIVE_SPACE_2; }
-                case -3 -> {return NEGATIVE_SPACE_3; }
-                case -4 -> {return NEGATIVE_SPACE_4; }
-                case -5 -> {return NEGATIVE_SPACE_5; }
-                case -6 -> {return NEGATIVE_SPACE_6; }
-                case -7 -> {return NEGATIVE_SPACE_7; }
-                case -8 -> {return NEGATIVE_SPACE_8; }
-                case -16 -> {return NEGATIVE_SPACE_16; }
-                case -32 -> {return NEGATIVE_SPACE_32; }
-                case -64 -> {return NEGATIVE_SPACE_64; }
-                case -128 -> {return NEGATIVE_SPACE_128; }
-                case -512 -> {return NEGATIVE_SPACE_512; }
-                case -1024 -> {return NEGATIVE_SPACE_1024; }
+                case 1 -> {
+                    return POSITIVE_SPACE_1;
+                }
+                case 2 -> {
+                    return POSITIVE_SPACE_2;
+                }
+                case 3 -> {
+                    return POSITIVE_SPACE_3;
+                }
+                case 4 -> {
+                    return POSITIVE_SPACE_4;
+                }
+                case 5 -> {
+                    return POSITIVE_SPACE_5;
+                }
+                case 6 -> {
+                    return POSITIVE_SPACE_6;
+                }
+                case 7 -> {
+                    return POSITIVE_SPACE_7;
+                }
+                case 8 -> {
+                    return POSITIVE_SPACE_8;
+                }
+                case 16 -> {
+                    return POSITIVE_SPACE_16;
+                }
+                case 32 -> {
+                    return POSITIVE_SPACE_32;
+                }
+                case 64 -> {
+                    return POSITIVE_SPACE_64;
+                }
+                case 128 -> {
+                    return POSITIVE_SPACE_128;
+                }
+                case 512 -> {
+                    return POSITIVE_SPACE_512;
+                }
+                case 1024 -> {
+                    return POSITIVE_SPACE_1024;
+                }
+                case -1 -> {
+                    return NEGATIVE_SPACE_1;
+                }
+                case -2 -> {
+                    return NEGATIVE_SPACE_2;
+                }
+                case -3 -> {
+                    return NEGATIVE_SPACE_3;
+                }
+                case -4 -> {
+                    return NEGATIVE_SPACE_4;
+                }
+                case -5 -> {
+                    return NEGATIVE_SPACE_5;
+                }
+                case -6 -> {
+                    return NEGATIVE_SPACE_6;
+                }
+                case -7 -> {
+                    return NEGATIVE_SPACE_7;
+                }
+                case -8 -> {
+                    return NEGATIVE_SPACE_8;
+                }
+                case -16 -> {
+                    return NEGATIVE_SPACE_16;
+                }
+                case -32 -> {
+                    return NEGATIVE_SPACE_32;
+                }
+                case -64 -> {
+                    return NEGATIVE_SPACE_64;
+                }
+                case -128 -> {
+                    return NEGATIVE_SPACE_128;
+                }
+                case -512 -> {
+                    return NEGATIVE_SPACE_512;
+                }
+                case -1024 -> {
+                    return NEGATIVE_SPACE_1024;
+                }
             }
 
             return "UNKNOWN VALUE: " + id;
@@ -88,7 +144,6 @@ public class TextConstants {
         public static final String NUM_0 = "\u0030";
         public static final String NUM_1 = "\u0031";
     }
-
 
 
     private static String register(int value) {

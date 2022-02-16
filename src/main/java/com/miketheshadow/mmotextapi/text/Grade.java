@@ -13,8 +13,8 @@ public enum Grade {
     MYTHICAL("Mythical", "#9A4BB4"),
     EMPYREAN("Empyrean", "#DFAF37");
 
-     final String readableName;
-     final ChatColor colorCode;
+    final String readableName;
+    final ChatColor colorCode;
 
     Grade(String readableName, String colorCode) {
         this.readableName = readableName;

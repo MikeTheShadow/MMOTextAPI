@@ -2,13 +2,10 @@ package com.miketheshadow.mmotextapi.itembuilder;
 
 import com.miketheshadow.mmotextapi.MMOTextAPI;
 import com.miketheshadow.mmotextapi.utils.ColorConstants;
-import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
-
-import java.util.Objects;
 
 public class FoodItemBuilder extends ItemBuilder {
 
