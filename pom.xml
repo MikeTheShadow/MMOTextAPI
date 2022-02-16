@@ -8,7 +8,6 @@
     <artifactId>MMOTextAPI</artifactId>
     <version>0.1.0</version>
     <packaging>jar</packaging>
-
     <name>MMOTextAPI</name>
 
     <description>A text API for MMORPG-style sub text</description>
@@ -25,8 +24,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>16</source>
-                    <target>16</target>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
             <plugin>
