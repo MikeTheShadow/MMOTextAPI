@@ -1,0 +1,8 @@
+name: MMOTextAPI
+version: '${project.version}'
+main: com.miketheshadow.mmotextapi.MMOTextAPI
+api-version: 1.16
+prefix: MTA
+authors: [ MikeTheShadow ]
+description: A text API for MMORPG-style sub text
+website: MikeTheShadow.ca
