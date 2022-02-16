@@ -26,9 +26,9 @@ public final class MMOTextAPI extends JavaPlugin implements Listener {
         LOGGER = this.getLogger();
         INSTANCE = this;
 
-        Bukkit.getPluginManager().registerEvents(this,this);
-
-        LOGGER.info(ChatColor.YELLOW + "Warning this is a debug build!");
+//        Bukkit.getPluginManager().registerEvents(this,this);
+//
+//        LOGGER.info(ChatColor.YELLOW + "Warning this is a debug build!");
 
         LOGGER.info("MMOTextAPI loaded!");
     }
