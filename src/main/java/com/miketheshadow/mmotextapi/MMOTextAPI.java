@@ -7,14 +7,12 @@ import java.util.logging.Logger;
 
 public final class MMOTextAPI extends JavaPlugin implements Listener {
 
-    private static MMOTextAPI INSTANCE;
     public static Logger LOGGER;
 
     @Override
     public void onEnable() {
 
         LOGGER = this.getLogger();
-        INSTANCE = this;
 
 //        Bukkit.getPluginManager().registerEvents(this,this);
 //
@@ -59,8 +57,4 @@ public final class MMOTextAPI extends JavaPlugin implements Listener {
 //        event.getPlayer().getInventory().addItem(stack2);
 //
 //    }
-
-    public static MMOTextAPI getINSTANCE() {
-        return INSTANCE;
-    }
 }

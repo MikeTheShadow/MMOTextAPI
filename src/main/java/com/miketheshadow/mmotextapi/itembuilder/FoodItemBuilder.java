@@ -6,6 +6,7 @@ import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.plugin.Plugin;
 
 public class FoodItemBuilder extends ItemBuilder {
 
@@ -14,15 +15,15 @@ public class FoodItemBuilder extends ItemBuilder {
     private final double coolDown;
     private final int duration;
 
-    public FoodItemBuilder(Material material, String name, int rank, double castTime, double coolDown, int duration) {
-        super(material, name);
+    public FoodItemBuilder(Plugin plugin, Material material, String name, int rank, double castTime, double coolDown, int duration) {
+        super(plugin,material, name);
         this.rank = rank;
         this.castTime = castTime;
         this.coolDown = coolDown;
         this.duration = duration;
 
         PersistentDataContainer container = this.getPersistentDataContainer();
-        container.set(new NamespacedKey(MMOTextAPI.getINSTANCE(), "rank"), PersistentDataType.INTEGER, this.rank);
+        container.set(new NamespacedKey(plugin, "rank"), PersistentDataType.INTEGER, this.rank);
     }
 
     public String getCastTime() {

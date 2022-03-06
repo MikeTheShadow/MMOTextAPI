@@ -12,6 +12,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -32,11 +33,13 @@ public class ItemBuilder implements IItemType {
     private String description;
     private final List<Pair<ItemStat>> statPairs = new ArrayList<>();
     private final PersistentDataContainer persistentDataContainer;
+    private final Plugin plugin;
 
-    public ItemBuilder(Material material, String name) {
+    public ItemBuilder(Plugin plugin, Material material, String name) {
         this.stack = new ItemStack(material, 1);
         this.meta = Objects.requireNonNull(stack.getItemMeta());
         this.name = name;
+        this.plugin = plugin;
         if (meta == null) throw new RuntimeException("Unable to find meta for " + material);
         persistentDataContainer = meta.getPersistentDataContainer();
         setGrade(Grade.BASIC);
@@ -49,27 +52,27 @@ public class ItemBuilder implements IItemType {
 
     public ItemBuilder setDescription(ChatColor color, String description) {
         this.description = color + description;
-        persistentDataContainer.set(new NamespacedKey(MMOTextAPI.getINSTANCE(), "description"), PersistentDataType.STRING, description);
+        persistentDataContainer.set(new NamespacedKey(plugin, "description"), PersistentDataType.STRING, description);
         return this;
     }
 
     public ItemBuilder addStat(ItemStat itemStat, int value) {
         statPairs.add(new Pair<>(itemStat, value));
-        persistentDataContainer.set(new NamespacedKey(MMOTextAPI.getINSTANCE(), itemStat.name()), PersistentDataType.INTEGER, value);
+        persistentDataContainer.set(new NamespacedKey(plugin, itemStat.name()), PersistentDataType.INTEGER, value);
         return this;
     }
 
     public ItemBuilder addStatMap(HashMap<ItemStat, Integer> stats) {
         stats.forEach((stat, amount) -> {
             statPairs.add(new Pair<>(stat, amount));
-            persistentDataContainer.set(new NamespacedKey(MMOTextAPI.getINSTANCE(), stat.name()), PersistentDataType.INTEGER, amount);
+            persistentDataContainer.set(new NamespacedKey(plugin, stat.name()), PersistentDataType.INTEGER, amount);
         });
         return this;
     }
 
     public ItemBuilder setGrade(Grade newGrade) {
         grade = newGrade;
-        persistentDataContainer.set(new NamespacedKey(MMOTextAPI.getINSTANCE(), "grade"), PersistentDataType.STRING, newGrade.name());
+        persistentDataContainer.set(new NamespacedKey(plugin, "grade"), PersistentDataType.STRING, newGrade.name());
         return this;
     }
 

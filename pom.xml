@@ -17,7 +17,22 @@
     </properties>
     <url>MikeTheShadow.ca</url>
 
+    <distributionManagement>
+        <repository>
+            <id>miketheshadow.repo</id>
+            <name>Basement Server</name>
+            <url>dav:http://maven.miketheshadow.ca</url>
+        </repository>
+    </distributionManagement>
+
     <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-webdav-jackrabbit</artifactId>
+                <version>3.5.1</version>
+            </extension>
+        </extensions>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
