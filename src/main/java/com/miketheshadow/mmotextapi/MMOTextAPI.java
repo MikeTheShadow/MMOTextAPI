@@ -25,7 +25,6 @@ public final class MMOTextAPI extends JavaPlugin implements Listener {
 
     @Override
     public void onDisable() {
-
     }
 
 //    @EventHandler
