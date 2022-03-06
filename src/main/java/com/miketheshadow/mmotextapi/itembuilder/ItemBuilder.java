@@ -1,6 +1,5 @@
 package com.miketheshadow.mmotextapi.itembuilder;
 
-import com.miketheshadow.mmotextapi.MMOTextAPI;
 import com.miketheshadow.mmotextapi.text.Grade;
 import com.miketheshadow.mmotextapi.text.ItemStat;
 import com.miketheshadow.mmotextapi.utils.ColorConstants;
