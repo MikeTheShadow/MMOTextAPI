@@ -93,14 +93,20 @@ public class ItemBuilder implements IItemType {
         // add upgradability status here
 
         if (this instanceof FoodItemBuilder foodItemBuilder) {
-            addTextToLore("This is a rank ", foodItemBuilder.getRank(), " food item");
-            addTextToLore("");
-            addTextToLore("Cast Time: ", foodItemBuilder.getCastTime());
-            addTextToLore("Cooldown: ", foodItemBuilder.getCoolDown());
-            addTextToLore("");
-            addTextToLore("A food item that lasts ", foodItemBuilder.getDuration());
-            addTextToLore("and gives the effects below");
-            addTextToLore("");
+
+            if(foodItemBuilder.getItemType().equalsIgnoreCase("Ingredient")) {
+                addTextToLore("This is a rank ", foodItemBuilder.getRank(), " ingredient.");
+                addTextToLore("");
+            } else {
+                addTextToLore("This is a rank ", foodItemBuilder.getRank(), " food item.");
+                addTextToLore("");
+                addTextToLore("Cast Time: ", foodItemBuilder.getCastTime());
+                addTextToLore("Cooldown: ", foodItemBuilder.getCoolDown());
+                addTextToLore("");
+                addTextToLore("A food item that lasts ", foodItemBuilder.getDuration());
+                addTextToLore("and gives the effects below");
+                addTextToLore("");
+            }
         }
 
         if (!statPairs.isEmpty()) {
