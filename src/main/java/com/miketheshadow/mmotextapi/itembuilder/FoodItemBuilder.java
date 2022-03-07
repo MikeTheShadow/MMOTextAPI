@@ -14,6 +14,7 @@ public class FoodItemBuilder extends ItemBuilder {
     private final double castTime;
     private final double coolDown;
     private final int duration;
+    private String itemType = "Food";
 
     public FoodItemBuilder(Plugin plugin, Material material, String name, int rank, double castTime, double coolDown, int duration) {
         super(plugin,material, name);
@@ -44,6 +45,10 @@ public class FoodItemBuilder extends ItemBuilder {
 
     @Override
     public String getItemType() {
-        return "Food";
+        return itemType;
+    }
+
+    public void setItemType(String itemType) {
+        this.itemType = itemType;
     }
 }
