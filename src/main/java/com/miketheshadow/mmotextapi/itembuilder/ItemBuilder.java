@@ -33,6 +33,7 @@ public class ItemBuilder implements IItemType {
     private final List<Pair<ItemStat>> statPairs = new ArrayList<>();
     private final PersistentDataContainer persistentDataContainer;
     private final Plugin plugin;
+    private String itemType = "Item";
 
     public ItemBuilder(Plugin plugin, Material material, String name) {
         this.stack = new ItemStack(material, 1);
@@ -170,7 +171,11 @@ public class ItemBuilder implements IItemType {
 
     @Override
     public String getItemType() {
-        return "Item";
+        return itemType;
+    }
+
+    public void setItemType(String type) {
+        this.itemType = type;
     }
 
     public PersistentDataContainer getPersistentDataContainer() {

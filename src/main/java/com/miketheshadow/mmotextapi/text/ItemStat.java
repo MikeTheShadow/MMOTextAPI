@@ -1,5 +1,8 @@
 package com.miketheshadow.mmotextapi.text;
 
+import org.bukkit.NamespacedKey;
+import org.bukkit.plugin.Plugin;
+
 public enum ItemStat {
     INTELLIGENCE("Intelligence"),
     STAMINA("Stamina"),
@@ -32,5 +35,9 @@ public enum ItemStat {
 
     public String getReadableName() {
         return readableName;
+    }
+
+    public NamespacedKey getNameSpacedKey(Plugin plugin) {
+        return new NamespacedKey(plugin,this.name());
     }
 }
