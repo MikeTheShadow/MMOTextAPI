@@ -23,17 +23,17 @@ import static java.util.Collections.sort;
 
 public class ItemBuilder implements IItemType {
 
-    private final ItemStack stack;
-    private final List<String> lore = new ArrayList<>();
+    final ItemStack stack;
+    final List<String> lore = new ArrayList<>();
     @NotNull
-    private final ItemMeta meta;
-    private final String name;
-    private Grade grade = Grade.BASIC;
-    private String description;
-    private final List<Pair<ItemStat>> statPairs = new ArrayList<>();
-    private final PersistentDataContainer persistentDataContainer;
-    private final Plugin plugin;
-    private String itemType = "Item";
+    final ItemMeta meta;
+    final String name;
+    Grade grade = Grade.BASIC;
+    String description;
+    final List<Pair<ItemStat>> statPairs = new ArrayList<>();
+    final PersistentDataContainer persistentDataContainer;
+    final Plugin plugin;
+    String itemType = "Item";
 
     public ItemBuilder(Plugin plugin, Material material, String name) {
         this.stack = new ItemStack(material, 1);
@@ -76,9 +76,6 @@ public class ItemBuilder implements IItemType {
         return this;
     }
 
-    /*
-    Converting the builder to an Item here.
-     */
     public ItemStack build() {
 
         addTextToLore(getItemType());
@@ -136,7 +133,7 @@ public class ItemBuilder implements IItemType {
         return stack;
     }
 
-    private void addFormattedParagraph(String paragraph) {
+    void addFormattedParagraph(String paragraph) {
 
         StringBuilder builder = new StringBuilder();
 
@@ -154,7 +151,7 @@ public class ItemBuilder implements IItemType {
         if (builder.length() > 0) lore.add(ChatColor.RESET + "" + ChatColor.WHITE + builder);
     }
 
-    private void addTextToLore(String... texts) {
+    void addTextToLore(String... texts) {
 
         if (texts[0].equals("")) {
             lore.add("");
@@ -174,8 +171,9 @@ public class ItemBuilder implements IItemType {
         return itemType;
     }
 
-    public void setItemType(String type) {
+    public ItemBuilder setItemType(String type) {
         this.itemType = type;
+        return this;
     }
 
     public PersistentDataContainer getPersistentDataContainer() {

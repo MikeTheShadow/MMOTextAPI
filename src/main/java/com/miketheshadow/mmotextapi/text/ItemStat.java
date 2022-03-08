@@ -4,28 +4,27 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.plugin.Plugin;
 
 public enum ItemStat {
-    INTELLIGENCE("Intelligence"),
-    STAMINA("Stamina"),
-    STRENGTH("Strength"),
     AGILITY("Agility"),
-    DAMAGE("Damage"),
+    ATTACK_DAMAGE("Damage"),
     ATTACK_SPEED("Attack Speed"),
-    CRITICAL_RATE("Critical Rate"),
+    BLOCK_RATE("Block Rate"),
+    BONUS_HEALTH("Bonus Health"),
     CRITICAL_DAMAGE("Critical Damage"),
+    CRITICAL_RATE("Critical Rate"),
     DAMAGE_REDUCTION("Damage Reduction"),
     DEFENSE("Defense"),
-    BLOCK_RATE("Block Rate"),
+    DURABILITY("Durability"),
+    FLAT_BONUS_AD("Flat Damage Bonus"),
+    GRADE("Grade"),
+    HANDLING("Handling"),
+    INTELLIGENCE("Intelligence"),
     PARRY_RATE("Parry Rate"),
+    PERCENT_BONUS_AD("% Bonus Damage"),
+    PERCENT_DAMAGE_REDUCTION("% Damage reduction"),
+    SHIELD_DEFENSE_PEN("Shield Defense Penetration"),
     SHIELD_DEFENSE_PEN_RATE("Shield Defense Penetration Rate"),
-    SHIELD_DEFENSE_PEN("Shield Defense Penetration");
-
-    public static float convertStrengthToDamage(float strength) {
-        return (float) (strength * .2);
-    }
-
-    public static float convertStaminaToHealth(float stamina) {
-        return stamina * 12;
-    }
+    STAMINA("Stamina"),
+    STRENGTH("Strength");
 
     final String readableName;
 
@@ -38,6 +37,6 @@ public enum ItemStat {
     }
 
     public NamespacedKey getNameSpacedKey(Plugin plugin) {
-        return new NamespacedKey(plugin,this.name());
+        return new NamespacedKey(plugin, this.name());
     }
 }

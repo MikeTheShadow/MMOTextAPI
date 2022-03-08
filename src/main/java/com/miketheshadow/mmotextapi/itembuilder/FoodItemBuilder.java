@@ -1,12 +1,16 @@
 package com.miketheshadow.mmotextapi.itembuilder;
 
-import com.miketheshadow.mmotextapi.MMOTextAPI;
+import com.miketheshadow.mmotextapi.text.ItemStat;
 import com.miketheshadow.mmotextapi.utils.ColorConstants;
+import com.miketheshadow.mmotextapi.utils.Pair;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.Plugin;
+
+import static java.util.Collections.sort;
 
 public class FoodItemBuilder extends ItemBuilder {
 
@@ -48,7 +52,9 @@ public class FoodItemBuilder extends ItemBuilder {
         return itemType;
     }
 
-    public void setItemType(String itemType) {
+    public FoodItemBuilder setItemType(String itemType) {
         this.itemType = itemType;
+        return this;
     }
+
 }
